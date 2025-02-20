@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 
-# ✅ JSON faylga ma'lumotlarni saqlovchi class
+
 class MalumotlarBoshqaruvchisi:
     FAYL_NOMI = "bank_malumotlar.json"
 
@@ -21,7 +21,7 @@ class MalumotlarBoshqaruvchisi:
             json.dump(malumotlar, fayl, indent=4)
 
 
-4
+
 
 class BankEntity(ABC):
     @abstractmethod
@@ -29,7 +29,7 @@ class BankEntity(ABC):
         pass
 
 
-# ✅ Mijoz sinfi
+
 class Mijoz(BankEntity):
     def __init__(self, ism, id_raqam, hisoblar=None):
         self.ism = ism
@@ -43,7 +43,7 @@ class Mijoz(BankEntity):
         return f"Mijoz: {self.ism}, ID: {self.id_raqam}"
 
 
-# ✅ Bank Hisobi sinfi
+
 class BankHisobi(BankEntity):
     def __init__(self, hisob_raqami, balans=0):
         self.hisob_raqami = hisob_raqami
@@ -66,7 +66,7 @@ class BankHisobi(BankEntity):
         return f"Hisob raqami: {self.hisob_raqami}, Balans: {self.balans}"
 
 
-# ✅ Tranzaktsiya sinfi
+
 class Tranzaktsiya:
     def __init__(self, turi, summa):
         self.turi = turi
@@ -77,7 +77,7 @@ class Tranzaktsiya:
         return f"{self.sana} - {self.turi}: {self.summa} so'm"
 
 
-# ✅ Bank Tizimi sinfi
+
 class BankTizimi:
     def __init__(self):
         print("📌 Bank tizimi yuklanmoqda...")
@@ -133,7 +133,7 @@ class BankTizimi:
         print("❌ Hisob topilmadi!")
 
 
-# ✅ Asosiy menyu
+
 if __name__ == "__main__":
     bank = BankTizimi()
     while True:
